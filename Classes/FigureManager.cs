@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace DotsLinesTriangles.Classes
+namespace DotsLinesTriangles
 {
-    class FigureManager
+    public class FigureManager
     {
         int eps;
         string alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -99,7 +99,7 @@ namespace DotsLinesTriangles.Classes
                 //создаем все возможные на данный момент треугольники
                 foreach (var elem in lines)
                     if (elem.Key.IndexOf(point.Lit) == -1)
-                        GenerateTriangle(elem.Value.Begin, elem.Value.End, point);
+                        GenerateTriangle(elem.Value.points[0], elem.Value.points[1], point);
             }
         }
         public void GenerateLinesTriangles()

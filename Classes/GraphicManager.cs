@@ -2,14 +2,14 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DotsLinesTriangles.Classes
+namespace DotsLinesTriangles
 {
-    class GraphicManager
+    public class GraphicManager
     {
         int eps;
         float eps2;
         public Graphics graphics;
-        public SolidBrush BlackBrush = new SolidBrush(Color.Black);
+        SolidBrush BlackBrush = new SolidBrush(Color.Black);
         SolidBrush WhiteBrush = new SolidBrush(Color.White);
         SolidBrush[] TrianglesBrushes =  { 
             new SolidBrush(Color.FromArgb(255, 253, 193, 175)),
@@ -54,6 +54,7 @@ namespace DotsLinesTriangles.Classes
         public void DrawTriangles(Dictionary<string, Triangle> trs, List<NamePoint> dots, ComboBox TrianglesBox)
         {
             graphics.Clear(Color.FromArgb(255, 255, 255));
+            //нужно чтобы комбобокс  не перерисовывался до тех пор пока мы не закончим с ним работу
             TrianglesBox.BeginUpdate();
             TrianglesBox.Items.Clear();
             foreach (KeyValuePair<string, Triangle> tr in trs)

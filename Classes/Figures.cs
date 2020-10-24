@@ -1,7 +1,11 @@
 ﻿using System;
 
-namespace DotsLinesTriangles.Classes
+namespace DotsLinesTriangles
 {
+    public abstract class ComplexFig 
+    {
+        public NamePoint[] points;
+    }
     public class NamePoint
     {
         public int X, Y;
@@ -13,25 +17,19 @@ namespace DotsLinesTriangles.Classes
             Lit = Name;
         }
     }
-    public class Line
+    public class Line : ComplexFig
     {
-        public NamePoint Begin;
-        public NamePoint End;
         public double dist { get; }
         public Line(NamePoint begin, NamePoint end)
         {
-            Begin = begin;
-            End = end;
-            dist = Math.Sqrt(Math.Pow(Begin.X - End.X, 2) + Math.Pow(Begin.Y - End.Y, 2));
-        }
-        public override string ToString()
-        {
-            return Begin.Lit + End.Lit;
+            points = new NamePoint[2];
+            points[0] = begin;
+            points[1] = end;
+            dist = Math.Sqrt(Math.Pow(begin.X - end.X, 2) + Math.Pow(begin.Y - end.Y, 2));
         }
     }
-    public class Triangle
+    public class Triangle : ComplexFig
     {
-        public NamePoint[] points;
         public Triangle(NamePoint first, NamePoint second, NamePoint third)
         {
             points = new NamePoint[3];

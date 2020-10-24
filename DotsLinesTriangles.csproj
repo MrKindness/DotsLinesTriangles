@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Buttons.cs" />
     <Compile Include="Classes\FigureManager.cs" />
     <Compile Include="Classes\Figures.cs" />
     <Compile Include="Classes\GraphicManager.cs" />
     <Compile Include="Classes\Magnet.cs" />
-    <Compile Include="Classes\OldInterface.cs" />
     <Compile Include="Interface.cs">
       <SubType>Form</SubType>
     </Compile>
